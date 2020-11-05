@@ -12,7 +12,7 @@
   </head>
 
   <body>
-
+    <h1 class = "Head-Main"> The Big Data Boss Season-3 People's Choice </h1>
 
     <% if @current_user %>
 
@@ -22,7 +22,7 @@
       </div>
       <div class ="Admin-Head">
         <% if @current_user.phone_number == 7396083388%>
-          <p> <%= button_to "Player-List", new_player_path, method: "get"%> </p>
+          <p> <%= button_to "Player-List", players_path, method: "get"%> </p>
           <p> <%= button_to "Users", users_path, method: "get"%> </p>
         <% end %>
       </div>

@@ -2,9 +2,11 @@ class PlayersController < ApplicationController
   before_action :ensure_user_logged_in
 
   def new
+    @current_user = current_user
     ensure_admin_logged_in
   end
   def index
+    @current_user = current_user
     render "index"
   end
 
@@ -39,6 +41,14 @@ class PlayersController < ApplicationController
       flash[:error] = "Already Voted!"
       redirect_to players_path
     end
+  end
+  def destroy
+    ensure_admin_logged_in
+    id = params[:id]
+    player =Player.find(id)
+    player.destroy
+    flash[:error] = "Player Removed"
+    redirect_to "/players/new"
   end
 
 

@@ -5,14 +5,13 @@ class SessionsController < ApplicationController
     user = User.find_by(phone_number: params[:phone_number])
     if user && user.authenticate(params[:password])
       session[:current_user_id] = user.id
-      redirect_to "/players"
-'''
+
         if user.phone_number== 7396083388
           redirect_to "/players/new"
         else
           redirect_to "/players"
         end
-'''
+
     else
       flash[:error] = "Login-Attempt invalid,Please Try Again!!"
       redirect_to root_path

@@ -6,16 +6,18 @@
 </style>
 
 <body>
-  <h1 class = "Head-Main"> The Big Data Boss Season-3 People's Choice </h1>
+  <% if @current_user.voted != false %>
+    <p class = "Voted"> Your vote has been recorded,Thank you! </p>
+  <% end %>
   <section class ="Player-Head">
     <% Player.all.each do |player| %>
       <div class ="Player">
         <p class="Player-Name" > <%= player.name  %> </p>
-
-        <%= form_with url: "/players/#{player.id}", method: "PUT" do %>
-          <%= submit_tag "SUPPORT!", data: {confirm: "confirm?once submitted can not be changed"}, class: "Support-Button" %>
-        <%end%>
-
+        <% if @current_user.voted == false %>
+          <%= form_with url: "/players/#{player.id}", method: "PUT" do %>
+            <%= submit_tag "SUPPORT!", data: {confirm: "confirm?once submitted can not be changed"}, class: "Support-Button" %>
+          <%end%>
+        <% end %>
       </div>
     <% end %>
 

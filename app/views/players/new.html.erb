@@ -12,6 +12,11 @@
       <div class ="Player">
         <p class="Player-Name" > Name: <%= player.name  %> </p>
         <p class="Player-Name" > Votes: <%= player.votes  %> </p>
+        <a href ="javascript:void(0)" class ="Delete">
+          <%= form_with(url: "/players/#{player.id}", method: "delete") do %>
+            <input type = "submit" value="Delete" />
+          <% end %>
+        </a>
       </div>
     <% end %>
 
