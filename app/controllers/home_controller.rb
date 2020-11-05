@@ -4,11 +4,8 @@ class HomeController < ApplicationController
     render "index"
   end
   def new
-    if @response2==true
       render :new
-    else
-      redirect_to root_path
-    end
+
   end
 
   def create
@@ -40,7 +37,7 @@ class HomeController < ApplicationController
     if @response.ok?
 
       flash[:error] = "Mobile Verified"
-      render :new
+      redirect_to "/home/new"
     else
       render :challenge
     end

@@ -122,3 +122,22 @@
   text-align: center;
   color: orangered;
 }
+.Form-but{
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: blue;
+}
+.Home-Challenge{
+  font-size: 25px;
+  align-content: center;
+  text-align: center;
+}
+.New-Head{
+  font-size: 30px;
+  color:blue;
+  text-align: center;
+  text-decoration: cornsilk;
+  margin-top: 50px;
+  margin-bottom: 15px;
+}

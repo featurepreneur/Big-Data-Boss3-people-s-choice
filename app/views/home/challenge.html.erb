@@ -1,13 +1,23 @@
 
-<%= form_tag(verify_home_index_path, method: :post) do -%>
-  <% if @response %>
-    <% @response.errors.each do |key, message| %>
-      <p><%= message %></p>
-    <% end %>
-  <% end %>
-  <div>
-    <%= label_tag "code", "Enter the code you were sent:" %>
-    <%= text_field_tag "code" %>
-  </div>
-  <%= button_tag "Verify" %>
-<% end -%>
+<style>
+  body {
+    background-color: lightgreen;
+    background-size: cover;
+  }
+</style>
+<body>
+  <section class ="Home-Challenge">
+    <%= form_tag(verify_home_index_path, method: :post) do -%>
+      <% if @response %>
+        <% @response.errors.each do |key, message| %>
+          <p><%= message %></p>
+        <% end %>
+      <% end %>
+      <div class ="Form-section">
+        <p> <%= label_tag "code", "Enter the code you were sent:" %> </p>
+        <p> <%= text_field_tag "code" %> </p>
+      </div>
+      <p class ="Form-but"> <%= button_tag "Verify" %> </p>
+    <% end -%>
+  </section>
+</body>
