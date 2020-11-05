@@ -1,0 +1,106 @@
+.Heading{
+  font-size: 45px;
+  color: #235345;
+  align-content: center;
+  text-align: center;
+}
+.Support{
+  font-size: 36px;
+  align-content: initial;
+  text-align: left;
+  color: rgb(224, 52, 66);
+}
+.NewUsers_Title{
+  align-content: center;
+  text-align: center;
+  color: chocolate;
+  font-size: 25px;
+}
+.New_User{
+  text-align: center;
+
+}
+.User-Form{
+  display: grid;
+  grid-template-columns: auto auto;
+}
+.UserHeader{
+  padding: 10px;
+  background-color: lightgray;
+  font-size: 16px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.Head-Main{
+  font-size: 45px;
+  text-align: center;
+  color: coral;
+}
+
+.Player-Head {
+  text-align: center;
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: space-evenly;
+  margin: 30px;
+}
+
+.Player {
+  padding: 25px 15px;
+  background-color: white;
+  display: grid;
+  align-content: flex-start;
+  margin: 25px 40px;
+}
+.Player-Name{
+  font-size: 36px;
+  color: blue;
+}
+.Support-Button {
+  color: white;
+  border: 1px solid rgb(190, 55, 149);
+  background-color: rgb(190, 55, 149);
+  margin-top: 40px;
+  padding: 20px 25px;
+  font-size: 28px;
+  width: 100%;
+}
+.Form-Button{
+
+}
+.User-Customers{
+  text-align: center;
+  text-decoration: solid;
+  font-size: 45px;
+  color: rgb(15, 83, 231);
+}
+
+.Customer-Details{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  margin-left: 20px;
+  margin-right: 20px;
+
+
+}
+.Customer-Details-spec{
+  background-color: lightblue;
+  padding: 10px;
+  font-size: 20px;
+  text-align: center;
+}
+.Customer-Details-Men{
+  background-color: lightblue;
+  padding: 10px;
+  font-size: 20px;
+  text-align: center;
+  color: red;
+}
+.Admin-Head{
+  display: flex;
+  align-content: center;
+  text-align: center;
+  justify-content: space-between;
+
+}

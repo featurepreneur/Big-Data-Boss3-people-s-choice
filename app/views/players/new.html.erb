@@ -1,0 +1,40 @@
+<style>
+  body {
+    background-color: cornsilk;
+    background-size: cover;
+  }
+</style>
+
+<body>
+  <h1 class = "Head-Main"> Admin's Room</h1>
+  <section class ="Player-Head">
+    <% Player.all.each do |player| %>
+      <div class ="Player">
+        <p class="Player-Name" > Name: <%= player.name  %> </p>
+        <p class="Player-Name" > Votes: <%= player.votes  %> </p>
+      </div>
+    <% end %>
+
+  </section>
+
+  <section class="New_User">
+    <p class="NewUsers_Title"> Add a Player </p>
+    <%= form_with url: players_path do |form| %>
+      <div class="Form-section">
+        <p class="FormInput-Label"> Name </p>
+        <%= form.text_field :name, class: "Form-Input" %>
+      </div>
+
+
+      <div class="Form-section">
+        <p class="FormInput-Label"> Phone </p>
+        <%= form.telephone_field :phone_number, class: "Form-Input" %>
+      </div>
+
+      <div class="Form-Section">
+        <%= form.submit "Add-up!", class: "Form-Submit"%>
+
+      </div>
+    <% end %>
+  </section>
+</body>

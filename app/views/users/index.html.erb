@@ -1,0 +1,19 @@
+<style>
+  body {
+    background-color: lightgreen;
+    background-size: cover;
+  }
+</style>
+<section>
+  <p class= "User-Customers"> Users </p>
+  <div class ="Customer-Details">
+    <p class = "Customer-Details-Men">  User-Name </p>
+    <p class = "Customer-Details-Men"> User-mail </p>
+    <p class = "Customer-Details-Men"> User-phone_number </p>
+    <% User.all.each do |user| %>
+      <p class = "Customer-Details-spec"> <%= user.name %> </p>
+      <p class = "Customer-Details-spec"> <%= user.email%> </p>
+      <p class = "Customer-Details-spec"> <%= user.phone_number%> </p>
+    <% end %>
+  </div>
+</section>

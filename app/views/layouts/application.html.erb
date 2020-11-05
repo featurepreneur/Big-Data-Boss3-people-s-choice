@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Big-Data-Boss3-People's-Choice </title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'https://cdnjs.cloudflare.com/ajax/libs/authy-form-helpers/2.3/form.authy.min.css', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/authy-form-helpers/2.3/form.authy.min.js', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+
+    <% if @current_user %>
+
+      <div class ="UserHeader">
+        <p> Welcome <%= @current_user.name %>! </p>
+        <p> <%= button_to "Sign-Out", destroy_session_path, method: "delete"%> <p>
+      </div>
+      <div class ="Admin-Head">
+        <% if @current_user.phone_number == 7396083388%>
+          <p> <%= button_to "Player-List", new_player_path, method: "get"%> </p>
+          <p> <%= button_to "Users", users_path, method: "get"%> </p>
+        <% end %>
+      </div>
+    <% end %>
+
+
+    <% if flash[:error] %>
+      <p class="Flash-Error">
+        <%= flash[:error] %>
+      </p>
+    <% end %>
+
+    <%= yield %>
+
+  </body>
+</html>

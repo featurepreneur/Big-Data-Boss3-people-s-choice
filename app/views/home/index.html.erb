@@ -1,0 +1,47 @@
+<style>
+  body {
+    background-color: lightblue;
+    background-size: cover;
+  }
+</style>
+<body>
+  <h1 class =" Heading">  Welcome to Big-Data-Boss </h1>
+  <h3 class = "Support"> Support your favorite </h3>
+<article class ="User-Form">
+  <section class= "User">
+    <%= form_tag(home_index_path, method: "POST") do %>
+      <% if @response %>
+        <% @response.errors.each do |key, message| %>
+          <p><%= message %></p>
+        <% end %>
+      <% end %>
+      <div>
+        <%= label_tag "authy-countries", "Country code:" %>
+        <%= select_tag "authy-countries", nil, name: 'country_code', 'data-show-as': 'number' %>
+      </div>
+      <div>
+        <%= label_tag "phone_number", "Phone number:" %>
+        <%= telephone_field_tag "phone_number", nil, name: 'phone_number' %>
+      </div>
+
+      <%= button_tag "Verify" %>
+    <% end %>
+
+  </section>
+  <p class="NewUsers_Title"> Sign-in! </p>
+  <section class="New_User">
+    <%= form_with url: sessions_path do |form| %>
+
+      <div class="Form-section">
+        <p class="FormInput-Label"> Phone </p>
+        <%= form.telephone_field :phone_number, class: "Form-Input" %>
+      </div>
+      <div class="Form-section">
+        <p class="FormInput-Label"> Password </p>
+        <%= form.password_field :password, class: "Form-Input" %>
+      </div class="Form-Section">
+        <%= form.submit "Sign-in!", class: "Form-Submit"%>
+    <% end %>
+  </section>
+
+</article>

@@ -1,0 +1,23 @@
+<style>
+  body {
+    background-color: cornsilk;
+    background-size: cover;
+  }
+</style>
+
+<body>
+  <h1 class = "Head-Main"> The Big Data Boss Season-3 People's Choice </h1>
+  <section class ="Player-Head">
+    <% Player.all.each do |player| %>
+      <div class ="Player">
+        <p class="Player-Name" > <%= player.name  %> </p>
+
+        <%= form_with url: "/players/#{player.id}", method: "PUT" do %>
+          <%= submit_tag "SUPPORT!", data: {confirm: "confirm?once submitted can not be changed"}, class: "Support-Button" %>
+        <%end%>
+
+      </div>
+    <% end %>
+
+  </section>
+</body>
