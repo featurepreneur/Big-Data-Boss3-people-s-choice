@@ -1,0 +1,302 @@
+/*custom font*/
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+
+@import url("https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css");
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+
+	50% {
+		background-position: 100% 50%;
+	}
+
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+
+/*basic reset*/
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	height: 100%;
+	overflow-y: scroll; 
+}
+
+body {
+	font-family: "Open Sans", arial, verdana;
+	min-height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	background: linear-gradient(324deg, #d0dcd8, #c0dcf5, #95e4f8, #8ea7ed);
+	background-size: 800% 800%;
+
+	-webkit-animation: AnimationName 6s ease infinite;
+	-moz-animation: AnimationName 6s ease infinite;
+	-o-animation: AnimationName 6s ease infinite;
+	animation: AnimationName 6s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+	0% {
+		background-position: 0% 15%
+	}
+
+	50% {
+		background-position: 100% 86%
+	}
+
+	100% {
+		background-position: 0% 15%
+	}
+}
+
+@-moz-keyframes AnimationName {
+	0% {
+		background-position: 0% 15%
+	}
+
+	50% {
+		background-position: 100% 86%
+	}
+
+	100% {
+		background-position: 0% 15%
+	}
+}
+
+@-o-keyframes AnimationName {
+	0% {
+		background-position: 0% 15%
+	}
+
+	50% {
+		background-position: 100% 86%
+	}
+
+	100% {
+		background-position: 0% 15%
+	}
+}
+
+@keyframes AnimationName {
+	0% {
+		background-position: 0% 15%
+	}
+
+	50% {
+		background-position: 100% 86%
+	}
+
+	100% {
+		background-position: 0% 15%
+	}
+
+}
+
+/*form styles*/
+
+h1 {
+	text-align: center;
+	padding-top: 5%;
+	font-size: 72px;
+	background: -webkit-linear-gradient(rgb(231, 13, 60), rgb(122, 127, 197));
+	background-clip: border-box;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	font-family: 'Oswald', sans-serif;
+
+}
+
+#msform {
+	width: 600px;
+	margin: 50px auto;
+	text-align: center;
+	position: relative;
+	padding-bottom: 30%;
+	padding-top: 30px;
+}
+
+#msform fieldset {
+	background: white;
+	border: 0 none;
+	border-radius: 3px;
+	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+	padding: 20px 30px;
+
+	box-sizing: border-box;
+	width: 80%;
+	margin: 0 10%;
+
+	/*stacking fieldsets above each other*/
+	position: absolute;
+}
+
+/*Hide all except first fieldset*/
+#msform fieldset:not(:first-of-type) {
+	display: none;
+}
+
+/*inputs*/
+#msform input,
+#msform textarea {
+	padding: 15px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	margin-bottom: 10px;
+	width: 100%;
+	box-sizing: border-box;
+	font-family: montserrat;
+	color: #2C3E50;
+	font-size: 13px;
+}
+
+/*buttons*/
+#msform .action-button {
+	width: 100px;
+	background: hsl(345, 71%, 58%);
+	font-weight: bold;
+	color: white;
+	border: 0 none;
+	border-radius: 1px;
+	cursor: pointer;
+	padding: 10px 5px;
+	margin: 10px 5px;
+}
+
+#msform .action-button:hover,
+#msform .action-button:focus {
+	box-shadow: 0 0 0 2px white, 0 0 0 3px hsl(345, 71%, 58%);
+}
+
+/*headings*/
+.fs-title {
+	font-size: 16px;
+	text-transform: uppercase;
+	color: blu;
+	margin-bottom: 10px;
+}
+
+.fs-subtitle {
+	font-weight: normal;
+	font-size: 14px;
+	color: #666;
+	margin-bottom: 20px;
+}
+
+/*progressbar*/
+#progressbar {
+	margin-bottom: 30px;
+	overflow: hidden;
+	/*CSS counters to number the steps*/
+	counter-reset: step;
+}
+
+#progressbar li {
+	list-style-type: none;
+	color: white;
+	text-transform: uppercase;
+	font-size: 9px;
+	width: 10%;
+	float: left;
+	position: relative;
+}
+
+#progressbar li:before {
+	content: counter(step);
+	counter-increment: step;
+	width: 20px;
+	line-height: 20px;
+	display: block;
+	font-size: 10px;
+	color: #333;
+	background: white;
+	border-radius: 3px;
+	margin: 0 auto 5px auto;
+}
+
+/*progressbar connectors*/
+#progressbar li:after {
+	content: '';
+	width: 100%;
+	height: 2px;
+	background: white;
+	position: absolute;
+	left: -50%;
+	top: 9px;
+	z-index: -1;
+	/*put it behind the numbers*/
+}
+
+#progressbar li:first-child:after {
+	/*connector not needed before the first step*/
+	content: none;
+}
+
+/*marking active/completed steps green*/
+/*The number of the step and the connector before it = green*/
+#progressbar li.active:before,
+#progressbar li.active:after {
+	background: hsl(345, 71%, 58%);
+	color: white;
+}
+
+.help-block {
+	font-size: .8em;
+	color: #7c7c7c;
+	text-align: left;
+	margin-bottom: .5em;
+}
+
+div.gallery {
+	margin: 5px;
+	border: 1px solid #ccc;
+	float: left;
+	width: 180px;
+}
+
+div.gallery:hover {
+	border: 1px solid #777;
+}
+
+div.gallery img {
+	width: 100%;
+	height: auto;
+}
+
+div.desc {
+	padding: 15px;
+	text-align: center;
+}
+
+.card-img {
+
+	border-radius: 50px;
+	size: 5%;
+}
+
+.column {
+	float: left;
+	width: 33.33%;
+	padding: 5px;
+}
+
+/* Clear floats after image containers */
+.row::after {
+	content: "";
+	clear: both;
+	display: table;
+}

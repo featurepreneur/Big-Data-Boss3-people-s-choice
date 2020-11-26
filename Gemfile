@@ -57,3 +57,7 @@ gem "pg", "~> 1.2"
 gem "authy", "~> 2.7"
 
 gem "envyable", "~> 1.2"
+
+gem "jquery-rails", "~> 4.4"
+
+gem "jquery-turbolinks", "~> 2.1"

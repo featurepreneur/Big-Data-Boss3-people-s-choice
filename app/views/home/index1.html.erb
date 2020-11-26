@@ -1,0 +1,46 @@
+<style>
+  body {
+    background-color: lightblue;
+    background-size: cover;
+  }
+</style>
+<body>
+<article class ="User-Form">
+  <section class= "User">
+    <p class = "Register"> Register Here to Support! </p>
+    <%= form_tag(home_index_path, method: "POST") do %>
+      <% if @response %>
+        <% @response.errors.each do |key, message| %>
+          <p><%= message %></p>
+        <% end %>
+      <% end %>
+      <div class="Form-section">
+        <p> <%= label_tag "authy-countries", "Country code:" %> </p>
+        <p> <%= select_tag "authy-countries", nil, name: 'country_code', 'data-show-as': 'number' %> </p>
+      </div>
+      <div class="Form-section">
+        <p> <%= label_tag "phone_number", "Phone number:" %> </p>
+        <p> <%= telephone_field_tag "phone_number", nil, name: 'phone_number' %> </p>
+      </div>
+
+      <%= button_tag "Verify" %>
+    <% end %>
+
+  </section>
+  <section class="New_User">
+    <p class="NewUsers_Title"> Registered already? Sign-in! </p>
+    <%= form_with url: sessions_path do |form| %>
+
+      <div class="Form-section">
+        <p class="FormInput-Label"> Phone: </p>
+        <%= form.telephone_field :phone_number, class: "Form-Input" %>
+      </div>
+      <div class="Form-section">
+        <p class="FormInput-Label"> Password: </p>
+        <%= form.password_field :password, class: "Form-Input" %>
+      </div class="Form-Section">
+        <%= form.submit "Sign-in!", class: "Form-Submit"%>
+    <% end %>
+  </section>
+
+</article>
